@@ -1,9 +1,8 @@
-/** @format */
-
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import storage from '../Services/LocalStorage';
+import './login.css';
 
 function LogIn({ history }) {
   const [validEmail, setValidEmail] = useState('');
@@ -18,7 +17,6 @@ function LogIn({ history }) {
   }
 
   function handleClick() {
-    console.log('entrou no handleclick');
     storage.clearStorage();
     storage.initStorage();
     storage.setValueByKey('user', { email: email1 });
@@ -38,25 +36,29 @@ function LogIn({ history }) {
   });
 
   return (
-    <div>
-      <h1>Login</h1>
-      <input
-        type="email"
-        placeholder="email"
-        onChange={(event) => validateEmail(event.target.value)}
-        data-testid="email-input"
-        required
-      />
-      <input
-        type="password"
-        placeholder="senha"
-        data-testid="password-input"
-        onChange={(event) => setPassord(event.target.value)}
-        required
-      />
+    <div className="login-container deep-orange lighten-3">
+      <div className="inputs-container">
+        <input
+          type="email"
+          placeholder="email"
+          className="inputs"
+          onChange={(event) => validateEmail(event.target.value)}
+          data-testid="email-input"
+          required
+        />
+        <input
+          type="password"
+          placeholder="senha"
+          className="inputs"
+          data-testid="password-input"
+          onChange={(event) => setPassord(event.target.value)}
+          required
+        />
+      </div>
       <button
         id="submit-btn"
         data-testid="login-submit-btn"
+        className="waves-effect waves-light btn-large"
         disabled
       >
         Entrar

@@ -1,0 +1,22 @@
+.login-container , .inputs-container {
+  display: flex;
+}
+
+.login-container {
+  padding: 0 20px;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.inputs-container {
+  height: 35vh;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blanchedalmond;
+}
+
+.inputs {
+  margin: 20px 0 !important;
+}
