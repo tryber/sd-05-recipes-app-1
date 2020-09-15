@@ -72,7 +72,7 @@ export default {
     searchByCategory(category) {
       console.log(`${this.baseUrl}filter.php?c=${category.replace(' ', '_')}`);
       return fetchAPI(
-        `${this.baseUrl}filter.php?c=${category.replace(/ \/ /g, '%20/%20').replace(' ', '_')}`
+        `${this.baseUrl}filter.php?c=${category.replace(/ \/ /g, '%20/%20').replace(' ', '_')}`,
       );
     },
     searchByFirstLetter(letter) {
